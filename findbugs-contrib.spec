@@ -6,7 +6,7 @@
 
 Name:           findbugs-contrib
 Version:        4.2.0
-Release:        3
+Release:        5
 Summary:        Extra findbugs detectors
 
 Group:          Development/Java
