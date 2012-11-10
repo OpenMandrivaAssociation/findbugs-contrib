@@ -1,0 +1,39 @@
+--- build.properties.ORIG	2009-10-31 13:49:38.000000000 -0600
++++ build.properties	2010-01-18 10:51:18.710368270 -0700
+@@ -1 +1 @@
+-jdk14.home=C:/j2sdk1.4.2_13
+\ No newline at end of file
++jdk14.home=/etc/alternatives/java
+--- build.xml.ORIG	2010-01-14 08:59:52.000000000 -0700
++++ build.xml	2010-01-18 10:53:43.653350132 -0700
+@@ -6,7 +6,8 @@
+ <project name="fb-contrib" default="install">
+ 	
+ 	<property file="build.properties"/>
+-	
++
++	<property name="system.dir" value="/usr/share/java/"/>
+ 	<property name="src.dir" value="${basedir}/src"/>
+ 	<property name="classes.dir" value="${basedir}/classes"/>
+ 	<property name="lib.dir" value="${basedir}/lib"/>
+@@ -40,14 +41,14 @@
+ 		<mkdir dir="${classes.dir}"/>
+ 		<mkdir dir="${javadoc.dir}"/>
+ 		<path id="fb-contrib.classpath">
+-			<pathelement location="${lib.dir}/findbugs.jar"/>
+-			<pathelement location="${lib.dir}/bcel.jar"/>
++			<pathelement location="${system.dir}/findbugs.jar"/>
++			<pathelement location="${system.dir}/findbugs-bcel.jar"/>
+ 		</path>
+ 		<path id="fb-contrib.samples.classpath">
+-			<pathelement location="${sampleslib.dir}/jsp-api.jar"/>
+-			<pathelement location="${sampleslib.dir}/junit.jar"/>
+-			<pathelement location="${sampleslib.dir}/servlet-api.jar"/>
+-			<pathelement location="${sampleslib.dir}/log4j.jar"/>
++			<pathelement location="${system.dir}/jsp.jar"/>
++			<pathelement location="${system.dir}/junit4.jar"/>
++			<pathelement location="${system.dir}/servlet.jar"/>
++			<pathelement location="${system.dir}/log4j.jar"/>
+ 		</path>
+ 		<mkdir dir="${classes.dir}/com"/>
+ 		<mkdir dir="${classes.dir}/com/mebigfatguy"/>
