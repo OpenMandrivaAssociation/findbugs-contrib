@@ -11,7 +11,7 @@ Summary:        Extra findbugs detectors
 
 Group:          Development/Java
 License:        LGPLv2+
-URL:            http://fb-contrib.sourceforge.net/
+URL:            https://fb-contrib.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/fb-contrib/fb-contrib-src-%{version}.zip
 # This patch has not been submitted upstream, as it contains Fedora-specific
 # changes.  It looks in /usr/share/java for jar files at both compile time and
